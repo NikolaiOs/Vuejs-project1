@@ -27,15 +27,20 @@ export default {
     msg: String
   },
   methods: {
-    op,
-    calculate () {
-      switch (op) {
-        case '+':
-          this.result = this.operand1 + this.operand2
-          break
-        case '-':
-          this.result = this.operand1 - this.operand2
-          break
+    // op - операция (+,-,*....)
+    calculate (op) {
+      if (op.target.innerHTML === '+') {
+        this.result = this.operand1 + this.operand2
+      } else if (op.target.innerHTML === '-') {
+        this.result = this.operand1 - this.operand2
+      } else if (op.target.innerHTML === '*') {
+        this.result = this.operand1 * this.operand2
+      } else if (op.target.innerHTML === '/') {
+        this.result = this.operand1 / this.operand2
+      } else if (op.target.innerHTML === '^') {
+        this.result = Math.pow(this.operand1, this.operand2)
+      } else if (op.target.innerHTML === '//') {
+        this.result = Math.trunc(this.operand1 / this.operand2)
       }
     }
   }
@@ -44,18 +49,17 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+  input {
+    width: 50px;
+    font-size: 20px;
+    margin-left: 5px;
+  }
+  button {
+    margin-top: 10px;
+    margin-left: 5px;
+    height: 30px;
+    width: 30px;
+    font-size: 20px;
+    text-align: center;
+  }
 </style>
