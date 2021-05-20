@@ -28,20 +28,42 @@ export default {
   },
   methods: {
     // op - операция (+,-,*....)
-    calculate (op) {
-      if (op.target.innerHTML === '+') {
-        this.result = this.operand1 + this.operand2
-      } else if (op.target.innerHTML === '-') {
-        this.result = this.operand1 - this.operand2
-      } else if (op.target.innerHTML === '*') {
-        this.result = this.operand1 * this.operand2
-      } else if (op.target.innerHTML === '/') {
-        this.result = this.operand1 / this.operand2
-      } else if (op.target.innerHTML === '^') {
-        this.result = Math.pow(this.operand1, this.operand2)
-      } else if (op.target.innerHTML === '//') {
-        this.result = Math.trunc(this.operand1 / this.operand2)
+    calculate () {
+      const { operand1, operand2 } = this
+      const op = event.target.innerHTML
+      switch (op) {
+        case '+':
+          this.result = operand1 + operand2
+          break
+        case '-':
+          this.result = operand1 - operand2
+          break
+        case '*':
+          this.result = operand1 * operand2
+          break
+        case '/':
+          this.result = operand1 / operand2
+          break
+        case '^':
+          this.result = Math.pow(operand1, operand2)
+          break
+        case '//':
+          this.result = Math.trunc(operand1 / operand2)
+          break
       }
+      // if (op.target.innerHTML === '+') {
+      //   this.result = this.operand1 + this.operand2
+      // } else if (op.target.innerHTML === '-') {
+      //   this.result = this.operand1 - this.operand2
+      // } else if (op.target.innerHTML === '*') {
+      //   this.result = this.operand1 * this.operand2
+      // } else if (op.target.innerHTML === '/') {
+      //   this.result = this.operand1 / this.operand2
+      // } else if (op.target.innerHTML === '^') {
+      //   this.result = Math.pow(this.operand1, this.operand2)
+      // } else if (op.target.innerHTML === '//') {
+      //   this.result = Math.trunc(this.operand1 / this.operand2)
+      // }
     }
   }
 }
@@ -51,7 +73,6 @@ export default {
 <style scoped lang="scss">
   input {
     width: 50px;
-    font-size: 20px;
     margin-left: 5px;
   }
   button {
