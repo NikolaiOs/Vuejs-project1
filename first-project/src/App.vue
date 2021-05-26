@@ -1,28 +1,56 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <Calculator msg="Calculator"/>
+    <header :class="[$style.header]">
+      My personal costs
+    </header>
+    <main>
+      <PaymentForm @addMyEventFromPaymentForm="onDataAdded" />
+      <PaymentsList :items="paymentsList" />
+    </main>
   </div>
 </template>
 
 <script>
-import Calculator from './components/Calculator.vue'
+import PaymentForm from './components/PaymentForm.vue'
+import PaymentsList from './components/PaymentsList.vue'
 
 export default {
   name: 'App',
   components: {
-    Calculator
+    PaymentForm,
+    PaymentsList
+  },
+  data () {
+    return {
+      paymentsList: [
+        {
+          date: '13.05.2021',
+          category: 'Education',
+          price: 123
+        },
+        {
+          date: '14.05.2021',
+          category: 'Education',
+          price: 345
+        },
+        {
+          date: '19.05.2021',
+          category: 'Education',
+          price: 888
+        }
+      ]
+    }
+  },
+  methods: {
+    onDataAdded (data) {
+      this.paymentsList.push(data)
+    }
   }
 }
 </script>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="scss" module>
+.header {
+
 }
 </style>
