@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" :class="[$style.app]">
     <header :class="[$style.header]">
       My personal costs
     </header>
@@ -50,6 +50,11 @@ export default {
 </script>
 
 <style lang="scss" module>
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .header {
 
 }
