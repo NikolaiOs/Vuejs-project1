@@ -4,23 +4,23 @@
       My personal costs
     </header>
     <main>
-      <PaymentForm @addMyEventFromPaymentForm="onDataAdded" />
+      <PaymentForm />
       <PaymentsList />
     </main>
   </div>
 </template>
 
 <script>
-import PaymentForm from './components/PaymentForm.vue'
 import PaymentsList from './components/PaymentsList.vue'
+import PaymentForm from './components/PaymentForm.vue'
 
 import { mapActions } from 'vuex'
 
 export default {
   name: 'App',
   components: {
-    PaymentForm,
-    PaymentsList
+    PaymentsList,
+    PaymentForm
   },
   data () {
     return {

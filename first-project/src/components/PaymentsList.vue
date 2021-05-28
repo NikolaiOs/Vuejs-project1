@@ -9,13 +9,14 @@
     <div v-for="(item, index) in currentElements" :key="index">
       {{ index }} {{ item }}
     </div>
-    <Pagination @paginate="onPaginate" :length="items.length" :n="n" :currentPage="page" />
+    <Pagination @paginate="onPaginate" :length="getPaymentsList.length" :n="n" :currentPage="page" />
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
 import Pagination from './Pagination.vue'
+
+import { mapGetters } from 'vuex'
 
 export default {
   components: {
@@ -41,7 +42,7 @@ export default {
     ]),
     currentElements () {
       const { n, page } = this
-      return this.items.slice(n * (page - 1), n * (page - 1) + n)
+      return this.getPaymentsList.slice(n * (page - 1), n * (page - 1) + n)
     }
   }
 }
