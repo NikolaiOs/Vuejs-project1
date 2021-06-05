@@ -14,7 +14,7 @@
 import PaymentsList from './components/PaymentsList.vue'
 import PaymentForm from './components/PaymentForm.vue'
 
-import { mapActions } from 'vuex'
+// import { mapActions } from 'vuex'
 
 export default {
   name: 'App',
@@ -27,15 +27,12 @@ export default {
     }
   },
   methods: {
-    ...mapActions([
-      'fetchData'
-    ]),
     onDataAdded (data) {
       this.paymentsList.push(data)
     }
   },
   mounted () {
-    this.fetchData()
+    // this.fetchData(1)
   }
 }
 </script>

@@ -54,18 +54,19 @@ export default {
     },
     save () {
       const { date, category, price } = this
-      this.$emit('addMyEventFromPaymentForm', { date, category, price })
-    },
-    fetchForm () {
-      return [
-        this.date,
-        this.category,
-        this.price
-      ]
+      // this.$emit('addMyEventFromPaymentForm', { date, category, price })
+      this.$store.commit('addFormPaymentsListData', { date, category, price })
     }
+    // fetchForm () {
+    //   return [
+    //     this.date,
+    //     this.category,
+    //     this.price
+    //   ]
+    // }
   },
   mounted () {
-    this.$store.commit('setPaymentsListData', this.fetchForm())
+    // this.$store.commit('setPaymentsListData', this.fetchForm())
   }
 }
 </script>
