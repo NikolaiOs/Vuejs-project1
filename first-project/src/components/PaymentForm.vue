@@ -15,8 +15,8 @@
       </li>
     </ul>
     <div>
-      <button class="btnAddNewCost" @click="onAddNewCost">
-        ADD NEW COST +
+      <button @click="onAddNewCost">
+        {{ list ? 'ROLL UP' : 'ADD NEW COST +' }}
       </button>
     </div>
     <!-- <input placeholder="Date" v-model="date" />
@@ -39,23 +39,31 @@ export default {
   },
   methods: {
     onAddNewCost () {
-      const btn = document.querySelector('.btnAddNewCost')
       const { list } = this
       switch (list) {
         case false:
           this.list = true
-          btn.innerHTML = 'Roll up'
           break
         case true:
           this.list = false
-          btn.innerHTML = 'ADD NEW COST +'
           break
       }
     },
     save () {
       const { date, category, price } = this
-      this.$emit('addMyEventFromPaymentForm', { date, category, price })
+      // this.$emit('addMyEventFromPaymentForm', { date, category, price })
+      this.$store.commit('addFormPaymentsListData', { date, category, price })
     }
+    // fetchForm () {
+    //   return [
+    //     this.date,
+    //     this.category,
+    //     this.price
+    //   ]
+    // }
+  },
+  mounted () {
+    // this.$store.commit('setPaymentsListData', this.fetchForm())
   }
 }
 </script>
