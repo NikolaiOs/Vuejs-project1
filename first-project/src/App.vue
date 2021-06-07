@@ -2,45 +2,27 @@
   <div id="app" :class="[$style.app]">
     <header :class="[$style.header]">
       My personal costs
-      <a href="#dashboard">Dashboard</a>
-      <a href="#about">About</a>
-      <a href="#404">404</a>
+      <router-link to="/dashboard">Dashboard</router-link>
+      <router-link to="/about">About</router-link>
+      <router-link to="/404">404</router-link>
     </header>
     <main>
-      <PageDashboard v-if="page === 'dashboard'" />
-      <PageAbout v-if="page === 'about'" />
-      <Page404 v-if="page === '404'" />
     </main>
   </div>
 </template>
 
 <script>
-import PageDashboard from './page/PageDashboard.vue'
-import PageAbout from './page/PageAbout.vue'
-import Page404 from './page/Page404.vue'
-
 export default {
   name: 'App',
   components: {
-    PageDashboard,
-    PageAbout,
-    Page404
   },
   data () {
     return {
-      page: 'dashboard'
     }
   },
   methods: {
-    setPage () {
-      this.page = location.hash.slice(1)
-    }
   },
   mounted () {
-    this.setPage()
-    window.addEventListener('hashchange', () => {
-      this.setPage()
-    })
   }
 }
 </script>
