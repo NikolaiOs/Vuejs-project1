@@ -7,6 +7,7 @@
       <router-link to="/404">404</router-link>
     </header>
     <main>
+      <router-view />
     </main>
   </div>
 </template>
@@ -23,6 +24,7 @@ export default {
   methods: {
   },
   mounted () {
+    // this.$router.push({ name: 'about' })
   }
 }
 </script>

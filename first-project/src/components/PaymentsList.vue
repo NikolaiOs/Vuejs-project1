@@ -51,6 +51,7 @@ export default {
   },
   mounted () {
     this.fetchData(this.page)
+    // this.page = +this.$route.params.page
   }
 }
 </script>
