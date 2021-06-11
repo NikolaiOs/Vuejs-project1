@@ -7,9 +7,9 @@
       <li>Price</li>
     </ul>
     <div v-for="(item, index) in currentElements" :key="index">
-      {{ index }} {{ item }}
+      {{ item }}
     </div>
-    <Pagination @paginate="onPaginate" :length="6" :n="n" :currentPage="page" />
+    <Pagination @paginate="onPaginate" :length="24" :n="n" :currentPage="page" />
   </div>
 </template>
 

@@ -16,6 +16,11 @@ const router = new Router({
       component: PageDashboard
     },
     {
+      path: 'add/payment/Food?value=200',
+      name: 'dashboard',
+      component: PageDashboard
+    },
+    {
       path: '/about',
       name: 'about',
       component: PageAbout

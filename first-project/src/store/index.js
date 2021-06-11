@@ -13,6 +13,16 @@ const localStorage = {
     { id: 4, date: '23.03.2020', category: 'Entertaiment', price: 969 },
     { id: 5, date: '24.03.2020', category: 'Education', price: 1500 },
     { id: 6, date: '25.03.2020', category: 'Food', price: 200 }
+  ],
+  page3: [
+    { id: 7, date: '23.03.2020', category: 'Entertaiment', price: 969 },
+    { id: 8, date: '24.03.2020', category: 'Education', price: 1500 },
+    { id: 9, date: '25.03.2020', category: 'Food', price: 200 }
+  ],
+  page4: [
+    { id: 10, date: '23.03.2020', category: 'Entertaiment', price: 969 },
+    { id: 11, date: '24.03.2020', category: 'Education', price: 1500 },
+    { id: 12, date: '25.03.2020', category: 'Food', price: 200 }
   ]
 }
 

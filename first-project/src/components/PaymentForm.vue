@@ -6,6 +6,11 @@
       </li>
       <li :class="[$style.list__item]">
         <input placeholder="Category" v-model="category" />
+        <select v-model="category">
+          <option v-for="option in options" :key="option">
+            {{ option }}
+          </option>
+        </select>
       </li>
       <li :class="[$style.list__item]">
         <input placeholder="Price" v-model.number="price" />
@@ -34,7 +39,8 @@ export default {
       date: '',
       category: '',
       price: 0,
-      list: false
+      list: false,
+      options: ['Education', 'Food', 'Transport']
     }
   },
   methods: {
